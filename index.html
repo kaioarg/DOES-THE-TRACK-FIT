@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Características de Spotify</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comparador de Características de Spotify</h1>
+        <div class="input-section">
+            <label for="playlist-url">URL de la Playlist:</label>
+            <input type="text" id="playlist-url" placeholder="Pegue la URL de la playlist aquí...">
+            <label for="track-url">URL de la Canción:</label>
+            <input type="text" id="track-url" placeholder="Pegue la URL de la canción aquí...">
+            <button onclick="compareFeatures()">Comparar</button>
+        </div>
+        <div class="results-section" id="results-section"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
