@@ -1,7 +1,7 @@
 
 // Function to get Spotify Access Token
 async function getSpotifyAccessToken() {
-    const response = await fetch('https://open.spotify.com/get_access_token?reason=transport&productType=web_player');
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://open.spotify.com/get_access_token?reason=transport&productType=web_player');
     const data = await response.json();
     return data.accessToken;
 }
@@ -41,7 +41,7 @@ async function compareFeatures() {
 
 // Function to get playlist tracks
 async function getPlaylistTracks(accessToken, playlistId) {
-    const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }
@@ -52,7 +52,7 @@ async function getPlaylistTracks(accessToken, playlistId) {
 
 // Function to get track audio features
 async function getTrackAudioFeatures(accessToken, trackId) {
-    const response = await fetch(`https://api.spotify.com/v1/audio-features/${trackId}`, {
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/audio-features/${trackId}`, {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }
