@@ -18,7 +18,12 @@ function extractIdFromUrl(url) {
 
 // Main function to execute the comparison when the button is clicked
 async function compareFeatures() {
+    
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';  // Show the loader
+
     const playlistUrl = document.getElementById('playlist-url').value;
+    
     const trackUrl = document.getElementById('track-url').value;
 
     const playlistId = extractIdFromUrl(playlistUrl);
@@ -59,7 +64,12 @@ async function getTrackAudioFeatures(accessToken, trackId) {
 
 // Updating the compareFeatures function to actually compare and display the results
 async function compareFeatures() {
+    
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';  // Show the loader
+
     const playlistUrl = document.getElementById('playlist-url').value;
+    
     const trackUrl = document.getElementById('track-url').value;
 
     const playlistId = extractIdFromUrl(playlistUrl);
@@ -88,6 +98,9 @@ async function compareFeatures() {
     }
 
     resultsHtml += `<h2>El track ${fitsOverall ? 'encaja' : 'no encaja'} en la playlist.</h2>`;
+    
+    loader.style.display = 'none';  // Hide the loader
     document.getElementById('results-section').innerHTML = resultsHtml;
+    
 }
 
